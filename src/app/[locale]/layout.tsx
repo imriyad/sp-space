@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { Analytics } from "@/components/Analytics";
 import { JsonLd } from "@/components/JsonLd";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { organizationSchema, localBusinessSchemas } from "@/lib/schema";
 import { site } from "@/content/site";
 
@@ -68,6 +69,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${notoBengali.variable} h-full antialiased`}
     >
       <body
@@ -78,6 +80,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             {t("skipToContent")}
           </a>
           <JsonLd data={[organizationSchema(), ...localBusinessSchemas()]} />
+          <ScrollToTop />
           <Nav />
           <main id="main" className="flex-1 pb-24 md:pb-0">
             {children}
