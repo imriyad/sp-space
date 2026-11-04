@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SB space design & construction — Website
 
-## Getting Started
+Production-ready bilingual (English / Bangla) marketing site for **SB space design & construction**, built with Next.js App Router.
 
-First, run the development server:
+Spec: [`docs/SB-Space-Website-Spec.md`](docs/SB-Space-Website-Spec.md)
+
+## Stack
+
+- Next.js (App Router) + TypeScript (strict)
+- Tailwind CSS v4
+- next-intl (`/en`, `/bn`)
+- Framer Motion (respects `prefers-reduced-motion`)
+- Resend contact API + honeypot + rate limit
+- GA4 via `next/script` (optional env)
+
+## Local setup
 
 ```bash
+cd sb-space-website
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) — you will be redirected to `/en` or `/bn`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---|---|
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve production build |
+| `npm run lint` | ESLint |
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+See [`.env.example`](.env.example):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Canonical base URL (no trailing slash) |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 ID |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Search Console meta verification |
+| `RESEND_API_KEY` | Send contact emails via Resend |
+| `CONTACT_TO_EMAIL` | Inbox for quote requests |
+| `CONTACT_FROM_EMAIL` | Verified Resend from address |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Without `RESEND_API_KEY`, the contact API validates the request and logs the message (useful in local/dev).
 
-## Deploy on Vercel
+## Content editing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All business data lives in `src/content/`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `site.ts` — name, offices, phones, social, stats, testimonials
+- `services.ts`, `projects.ts`, `faqs.ts`, `areas.ts`, `blog.ts`, `process.ts`
+
+Never invent prices, reviews, awards, or years. Empty `testimonials` / `stats` / social URLs hide those UI pieces.
+
+## Deploy (Vercel)
+
+1. Push this repo to GitHub/GitLab.
+2. Import the project in [Vercel](https://vercel.com).
+3. Set env vars from `.env.example`.
+4. Deploy. Add the custom domain with HTTPS and a single canonical host (`www` → apex or reverse) via 301.
+
+## Quality docs
+
+- [`docs/ASSETS-NEEDED.md`](docs/ASSETS-NEEDED.md) — photos, logo, hours, reviews still required
+- [`docs/LOCAL-SEO-CHECKLIST.md`](docs/LOCAL-SEO-CHECKLIST.md) — two GBPs, citations, Search Console
+
+## Offices
+
+1. Madhabdi — Rhine OK Market, Narsingdi 1604  
+2. Mohammadpur — P.C Culture Housing, Dhaka 1207  
+
+Phone: `01703-880891` · WhatsApp: same · Email: `spacedesignsb@gmail.com`
