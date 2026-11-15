@@ -1,7 +1,9 @@
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { site, formatOfficeAddress } from "@/content/site";
+import { site, formatOfficeAddress, telHref } from "@/content/site";
 import type { Locale } from "@/i18n/routing";
+import { MailIcon, PhoneIcon } from "./Icons";
 
 export async function Footer() {
   const t = await getTranslations("footer");
@@ -17,71 +19,111 @@ export async function Footer() {
     { key: "linkedin", href: site.social.linkedin, label: "LinkedIn" },
   ].filter((s) => Boolean(s.href));
 
-  return (
-    <footer className="border-t border-white/10 bg-black text-[12px] text-secondary">
-      <div className="container-media section-pad !py-12">
-        <div className="mb-10 max-w-xl">
-          <p className="text-lg font-semibold tracking-wide text-white uppercase">{site.shortName}</p>
-          <p className="mt-2 body-lg !text-base">{t("tagline")}</p>
-        </div>
+  const columns = [
+    {
+      title: t("explore"),
+      links: [
+        { href: "/services", label: tn("services") },
+        { href: "/projects", label: tn("projects") },
+        { href: "/process", label: tn("process") },
+        { href: "/blog", label: tn("blog") },
+        { href: "/faq", label: tn("faq") },
+      ],
+    },
+    {
+      title: t("company"),
+      links: [
+        { href: "/about", label: tn("about") },
+        { href: "/contact", label: tn("contact") },
+        { href: "/privacy", label: tc("privacy") },
+        { href: "/terms", label: tc("terms") },
+      ],
+    },
+  ];
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="mb-3 font-semibold text-white">{t("explore")}</p>
-            <ul className="space-y-2">
-              <li><Link href="/services" className="hover:underline">{tn("services")}</Link></li>
-              <li><Link href="/projects" className="hover:underline">{tn("projects")}</Link></li>
-              <li><Link href="/process" className="hover:underline">{tn("process")}</Link></li>
-              <li><Link href="/blog" className="hover:underline">{tn("blog")}</Link></li>
-              <li><Link href="/faq" className="hover:underline">{tn("faq")}</Link></li>
-            </ul>
+  return (
+    <footer className="relative overflow-hidden bg-black text-sm text-secondary">
+      <div className="section-divider absolute inset-x-0 top-0" aria-hidden />
+      <div className="container-media relative pb-10 pt-16 md:pt-20">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.6fr]">
+          <div className="max-w-sm">
+            <Link href="/" className="inline-block transition-opacity hover:opacity-80">
+              <Image src="/brand/logo-nav.png" alt="SB Space" width={169} height={36} className="h-9 w-auto" />
+            </Link>
+            <p className="mt-5 leading-relaxed">{locale === "bn" ? site.taglineBn : t("tagline")}</p>
+            <div className="mt-6 space-y-2.5">
+              <a
+                href={telHref(site.phone)}
+                className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
+              >
+                <PhoneIcon size={16} className="text-white/40" />
+                {site.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${site.email}`}
+                className="flex items-center gap-3 text-white/80 transition-colors hover:text-white"
+              >
+                <MailIcon size={16} className="text-white/40" />
+                {site.email}
+              </a>
+            </div>
           </div>
+
+          {columns.map((col) => (
+            <div key={col.title}>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">{col.title}</p>
+              <ul className="space-y-3">
+                {col.links.map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="link-underline">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
           <div>
-            <p className="mb-3 font-semibold text-white">{t("company")}</p>
-            <ul className="space-y-2">
-              <li><Link href="/about" className="hover:underline">{tn("about")}</Link></li>
-              <li><Link href="/contact" className="hover:underline">{tn("contact")}</Link></li>
-              <li><Link href="/privacy" className="hover:underline">{tc("privacy")}</Link></li>
-              <li><Link href="/terms" className="hover:underline">{tc("terms")}</Link></li>
-            </ul>
-          </div>
-          <div className="sm:col-span-2">
-            <p className="mb-3 font-semibold text-white">{tc("offices")}</p>
-            <div className="grid gap-6 sm:grid-cols-2">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/90">{tc("offices")}</p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {site.offices.map((office) => (
                 <div key={office.id}>
-                  <p className="font-medium text-white/90">
-                    {locale === "bn" ? office.labelBn : office.label}
-                  </p>
-                  <p className="mt-1 leading-relaxed">
-                    {formatOfficeAddress(office, locale)}
-                  </p>
+                  <p className="font-medium text-white/85">{locale === "bn" ? office.labelBn : office.label}</p>
+                  <p className="mt-1.5 leading-relaxed">{formatOfficeAddress(office, locale)}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-6 space-y-1">
-              <p>
-                <a href={`tel:${site.phone}`} className="hover:underline">{site.phoneDisplay}</a>
-              </p>
-              <p>
-                <a href={`mailto:${site.email}`} className="hover:underline">{site.email}</a>
-              </p>
-            </div>
-            {socialEntries.length > 0 ? (
-              <div className="mt-4 flex flex-wrap gap-3">
-                <span className="font-semibold text-white">{tc("followUs")}</span>
-                {socialEntries.map((s) => (
-                  <a key={s.key} href={s.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                    {s.label}
-                  </a>
-                ))}
-              </div>
-            ) : null}
           </div>
         </div>
 
-        <p className="mt-12 border-t border-[var(--divider)] pt-6">
-          © {year} {site.name}. {tc("allRights")}
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.08] pt-6 text-xs sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {year} {site.name}. {tc("allRights")}
+          </p>
+          {socialEntries.length > 0 ? (
+            <div className="flex flex-wrap items-center gap-4">
+              <span className="text-white/50">{tc("followUs")}</span>
+              {socialEntries.map((s) => (
+                <a
+                  key={s.key}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline text-white/80"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        <p
+          className="pointer-events-none mt-10 select-none bg-gradient-to-b from-white/[0.09] to-transparent bg-clip-text text-center text-[clamp(4rem,19vw,15rem)] font-bold leading-[0.8] tracking-[-0.06em] text-transparent"
+          aria-hidden
+        >
+          SB Space
         </p>
       </div>
     </footer>

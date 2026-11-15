@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Interior design perspective of a living room with sofa and pendant light">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="38%" r="78%">
+    <stop offset="0" stop-color="#0f1a30"/>
+    <stop offset="0.55" stop-color="#080b14"/>
+    <stop offset="1" stop-color="#050507"/>
+  </radialGradient>
+  <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#7ab8ff" stroke-opacity="0.07" stroke-width="1"/>
+  </pattern>
+  <pattern id="g2" width="200" height="200" patternUnits="userSpaceOnUse">
+    <path d="M200 0H0V200" fill="none" stroke="#7ab8ff" stroke-opacity="0.12" stroke-width="1.5"/>
+  </pattern>
+  <radialGradient id="fadeG" cx="50%" cy="45%" r="60%">
+    <stop offset="0.3" stop-color="#fff"/>
+    <stop offset="1" stop-color="#000"/>
+  </radialGradient>
+  <mask id="fade"><rect width="1600" height="1000" fill="url(#fadeG)"/></mask>
+  <radialGradient id="glowB">
+    <stop offset="0" stop-color="#2f8bff" stop-opacity="0.38"/>
+    <stop offset="1" stop-color="#2f8bff" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowV">
+    <stop offset="0" stop-color="#7c5cff" stop-opacity="0.3"/>
+    <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glowA">
+    <stop offset="0" stop-color="#ffb86b" stop-opacity="0.45"/>
+    <stop offset="1" stop-color="#ffb86b" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="ln" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="1000">
+    <stop offset="0" stop-color="#d6eaff"/>
+    <stop offset="0.5" stop-color="#7ab8ff"/>
+    <stop offset="1" stop-color="#a5b0ff"/>
+  </linearGradient>
+  <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#4c9dff" stop-opacity="0.26"/>
+    <stop offset="1" stop-color="#4c9dff" stop-opacity="0.04"/>
+  </linearGradient>
+  <linearGradient id="faceV" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7c5cff" stop-opacity="0.3"/>
+    <stop offset="1" stop-color="#7c5cff" stop-opacity="0.05"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#cfe6ff" stop-opacity="0.32"/>
+    <stop offset="0.5" stop-color="#4c9dff" stop-opacity="0.1"/>
+    <stop offset="1" stop-color="#7c5cff" stop-opacity="0.2"/>
+  </linearGradient>
+  
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/>
+<g mask="url(#fade)"><rect width="1600" height="1000" fill="url(#g1)"/><rect width="1600" height="1000" fill="url(#g2)"/></g>
+<ellipse cx="870" cy="420" rx="520" ry="320" fill="url(#glowA)"/><ellipse cx="800" cy="520" rx="700" ry="360" fill="url(#glowB)"/>
+<line x1="520" y1="300" x2="180" y2="81.4" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<line x1="1080" y1="300" x2="1420" y2="81.4" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<line x1="520" y1="660" x2="180" y2="878.6" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<line x1="1080" y1="660" x2="1420" y2="878.6" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<polygon points="520,660 1080,660 1420,878.6 180,878.6" fill="url(#face)" fill-opacity="0.6"/>
+<line x1="590" y1="660" x2="335" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="660" y1="660" x2="490" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="730" y1="660" x2="645" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="800" y1="660" x2="800" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="870" y1="660" x2="955" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="940" y1="660" x2="1110" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<line x1="1010" y1="660" x2="1265" y2="878.6" stroke="#7ab8ff" stroke-width="2" stroke-opacity="0.3"/>
+<rect x="520" y="300" width="560" height="360" fill="#0b1324" stroke="url(#ln)" stroke-width="4"/>
+<line x1="550" y1="320" x2="550" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="564" y1="320" x2="564" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="578" y1="320" x2="578" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="592" y1="320" x2="592" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="606" y1="320" x2="606" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="620" y1="320" x2="620" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="634" y1="320" x2="634" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="648" y1="320" x2="648" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="662" y1="320" x2="662" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<line x1="676" y1="320" x2="676" y2="640" stroke="#ffb86b" stroke-width="3" stroke-opacity="0.65"/>
+<rect x="730" y="370" width="240" height="140" rx="6" fill="url(#glass)" stroke="url(#ln)" stroke-width="3"/>
+<line x1="1000" y1="420" x2="1060" y2="420" stroke="url(#ln)" stroke-width="3" stroke-opacity="0.7"/>
+<line x1="1000" y1="480" x2="1060" y2="480" stroke="url(#ln)" stroke-width="3" stroke-opacity="0.7"/>
+<circle cx="1030" cy="404" r="14" fill="none" stroke="#ffb86b" stroke-opacity="0.7" stroke-width="2.5"/>
+<ellipse cx="840" cy="760" rx="300" ry="46" fill="#7c5cff" fill-opacity="0.12" stroke="#a5b0ff" stroke-opacity="0.5" stroke-width="2.5"/>
+<rect x="610" y="600" width="430" height="110" rx="22" fill="#0e1830" stroke="url(#ln)" stroke-width="4"/>
+<rect x="630" y="560" width="390" height="70" rx="20" fill="url(#face)" stroke="url(#ln)" stroke-width="4"/>
+<line x1="825" y1="630" x2="825" y2="700" stroke="url(#ln)" stroke-width="2.5" stroke-opacity="0.6"/>
+<line x1="650" y1="710" x2="644" y2="734" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<line x1="1000" y1="710" x2="994" y2="734" stroke="url(#ln)" stroke-width="4" stroke-opacity="0.8"/>
+<ellipse cx="690" cy="600" rx="40" ry="28" fill="#ffb86b" fill-opacity="0.18" stroke="#ffb86b" stroke-opacity="0.75" stroke-width="2.5"/>
+<ellipse cx="960" cy="600" rx="40" ry="28" fill="#ffb86b" fill-opacity="0.18" stroke="#ffb86b" stroke-opacity="0.75" stroke-width="2.5"/>
+<rect x="740" y="770" width="200" height="22" rx="8" fill="url(#glass)" stroke="url(#ln)" stroke-width="3"/>
+<ellipse cx="870" cy="420" rx="200" ry="160" fill="url(#glowA)"/>
+<line x1="870" y1="140" x2="870" y2="330" stroke="#ffb86b" stroke-width="2.5" stroke-opacity="0.8"/>
+<path d="M820 372 Q870 300 920 372 Z" fill="#ffb86b" fill-opacity="0.35" stroke="#ffb86b" stroke-width="3"/>
+<path d="M820 372 L780 520 L960 520 L920 372 Z" fill="#ffb86b" fill-opacity="0.06"/>
+<path d="M1110 700 L1170 700 L1160 760 L1120 760 Z" fill="url(#face)" stroke="url(#ln)" stroke-width="3"/>
+<path d="M1140 700 Q1121 677.5 1062.1 655" fill="none" stroke="#7fe0b0" stroke-opacity="0.7" stroke-width="3"/>
+<path d="M1140 700 Q1137.5 661 1095 622.1" fill="none" stroke="#7fe0b0" stroke-opacity="0.7" stroke-width="3"/>
+<path d="M1140 700 Q1160 655 1140 610" fill="none" stroke="#7fe0b0" stroke-opacity="0.7" stroke-width="3"/>
+<path d="M1140 700 Q1182.5 661 1185 622.1" fill="none" stroke="#7fe0b0" stroke-opacity="0.7" stroke-width="3"/>
+<path d="M1140 700 Q1199 677.5 1217.9 655" fill="none" stroke="#7fe0b0" stroke-opacity="0.7" stroke-width="3"/>
+<ellipse cx="640" cy="250" rx="50" ry="24" fill="url(#glowA)"/>
+<circle cx="640" cy="250" r="6" fill="#ffb86b"/>
+<ellipse cx="960" cy="250" rx="50" ry="24" fill="url(#glowA)"/>
+<circle cx="960" cy="250" r="6" fill="#ffb86b"/>
+<ellipse cx="1040" cy="250" rx="50" ry="24" fill="url(#glowA)"/>
+<circle cx="1040" cy="250" r="6" fill="#ffb86b"/>
+<text x="170" y="920" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24" letter-spacing="3" fill="#7ab8ff" fill-opacity="0.6" text-anchor="start" >LIVING — INTERIOR CONCEPT</text>
+</svg>

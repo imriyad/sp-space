@@ -90,7 +90,7 @@ Clients choose us when they want clear communication, practical detailing and a 
         },
       },
     ],
-    heroImage: "/images/placeholder-architectural.svg",
+    heroImage: "/images/services/architectural-design.svg",
     relatedProjects: ["dental-clinic-interior-uttara"],
     seo: {
       title: {
@@ -161,7 +161,7 @@ If you are building in Narsingdi or Dhaka and want structural design that speaks
         },
       },
     ],
-    heroImage: "/images/placeholder-structural.svg",
+    heroImage: "/images/services/structural-design.svg",
     relatedProjects: [],
     seo: {
       title: {
@@ -232,7 +232,7 @@ Whether you need an apartment interior in Dhaka or a clinic interior in Uttara, 
         },
       },
     ],
-    heroImage: "/images/placeholder-interior.svg",
+    heroImage: "/images/services/interior-design.svg",
     relatedProjects: ["dental-clinic-interior-uttara"],
     seo: {
       title: {
@@ -303,7 +303,7 @@ Ask us about your plot or renovation brief; we will outline the process from con
         },
       },
     ],
-    heroImage: "/images/placeholder-construction.svg",
+    heroImage: "/images/services/construction.svg",
     relatedProjects: [],
     seo: {
       title: {
@@ -372,7 +372,7 @@ If you need a steel structure company that also understands architecture and on-
         },
       },
     ],
-    heroImage: "/images/placeholder-steel.svg",
+    heroImage: "/images/services/steel-structure.svg",
     relatedProjects: [],
     seo: {
       title: {
@@ -441,7 +441,7 @@ Use 3D visualization to align family members, partners or investors early—and 
         },
       },
     ],
-    heroImage: "/images/placeholder-3d.svg",
+    heroImage: "/images/services/3d-visualization.svg",
     relatedProjects: ["dental-clinic-interior-uttara"],
     seo: {
       title: {
@@ -510,7 +510,7 @@ Share your project stage and audience; we will recommend still renders, a walkth
         },
       },
     ],
-    heroImage: "/images/placeholder-animation.svg",
+    heroImage: "/images/services/animation-walkthrough.svg",
     relatedProjects: [],
     seo: {
       title: {
